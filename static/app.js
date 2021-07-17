@@ -3,10 +3,6 @@ This is not the only way to complete this assignment.
 Feel free to disregard and create your own code */
 
 // Define function that will run on page load
-d3.json("samples.json").then(function (response) {
-    console.log(response);
-});
-
 
 function init() {
     let dropdownMenu = d3.select("#selDataset");
@@ -96,19 +92,35 @@ function buildCharts(sample) {
             type : "bar",
             orientation: "h"
 
-        }]
+        }];
 
         let layout1 = {
             title: "Top 10 Bacteria Cultures Found",
             margin: {t:30,l:150}
-        }
+        };
 
         Plotly.newPlot("bar",data1,layout1);
 
-     });
+    //     var data = [
+    //         {
+    //             domain: { x: [0, 1], y: [0, 1] },
+    //             value: 270,
+    //             title: { text: "Speed" },
+    //             type: "indicator",
+    //             mode: "gauge+number"
+    //         }
+    //     ];
+
+    //     let freq = 
+        
+    //     var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    //     Plotly.newPlot('myDiv', data, layout);
+
+      });
 
 
     // Pay attention to what data is required for each chart
+    // w3 schools
 
     // Create bar chart in correct location
 
