@@ -2,8 +2,12 @@
 This is not the only way to complete this assignment.
 Feel free to disregard and create your own code */
 
-// Define function that will run on page load
+d3.json("samples.json").then(function (response) {
+    console.log(response);
 
+})
+
+//Define function that will run on page load
 function init() {
     let dropdownMenu = d3.select("#selDataset");
     // Read json data
@@ -11,8 +15,8 @@ function init() {
         // Parse and filter data to get sample names
         let names = response.names;
         // Add dropdown option for each sample
-        for(i=0;i<names.length;i++){
-            dropdownMenu.append("option").text(names[i]).property("value" , names[i])
+        for (i = 0; i < names.length; i++) {
+            dropdownMenu.append("option").text(names[i]).property("value", names[i])
         }
         let sample = names[0];
         buildMetadata(sample);
@@ -23,7 +27,7 @@ function init() {
 }
 
 // Parse and filter the data to get the sample's metadata
-    
+
 
 
 // Call functions below using the first sample to build metadata and initial plots
@@ -35,13 +39,33 @@ function buildMetadata(sample) {
         // Parse and filter the data to get the sample's metadata
         let metaData = response.metadata;
         // Specify the location of the metadata and update it
-        let resultArr = metaData.filter(sampleObj=>sampleObj.id == sample);
+        let resultArr = metaData.filter(sampleObj => sampleObj.id == sample);
+        console.log(resultArr);
         let result = resultArr[0];
         let panel = d3.select("#sample-metadata");
         panel.html("");
-        Object.entries(result).forEach(([key,value])=>{
+        Object.entries(result).forEach(([key, value]) => {
             panel.append("h6").text(`${key}:${value}`)
         });
+
+        let freqArr = metaData.filter(sampleObj => sampleObj.id.wfreq == sample);
+        console.log(freqArr);
+        // let washFreq = freqArr[0];
+
+        // let data3 = [
+        //     {
+        //         domain: { x: [0, 1], y: [0, 1] },
+        //         value: freqArr,
+        //         title: { text: "Speed" },
+        //         type: "indicator",
+        //         mode: "gauge+number",
+        //         delta: { reference: washFreq },
+        //         gauge: { axis: { range: [null, washFreq] } }
+        //     }
+        // ];
+        // let layout3 = { width: 600, height: 500, margin: { t: 0, b: 0 } }
+
+        // Plotly.newPlot("gauge", data3, layout3);
 
 
 
@@ -55,7 +79,7 @@ function buildCharts(sample) {
     d3.json("samples.json").then(function (response) {
         // Parse and filter the data to get the sample's OTU data
         let samples = response.samples;
-        let resultArr = samples.filter(sampleObj=>sampleObj.id == sample);
+        let resultArr = samples.filter(sampleObj => sampleObj.id == sample);
         let result = resultArr[0];
         let otu_id = result.otu_ids;
         let otu_labels = result.otu_labels;
@@ -67,68 +91,56 @@ function buildCharts(sample) {
             text: otu_labels,
             mode: 'markers',
             marker: {
-                size:sample_values,
+                size: sample_values,
                 color: otu_id,
-                colorscale:"Earth"
-
+                colorscale: "Earth"
             }
-        }];
-        
-        let layout = {
-            title:"Bacteria culture per sample",
-            margin: {t:0},
-            hovermode: "closest",
-            xaxis: {title:"OTU ID"},
-            margin:{t:30},
-        };
-        Plotly.newPlot("bubble",data,layout);
 
-        let yTicks = otu_id.slice(0,10).map(otuid=>`OTU ${otuid}`).reverse();
+        }];
+
+        let layout = {
+            title: "Bacteria culture per sample",
+            margin: { t: 0 },
+            hovermode: "closest",
+            xaxis: { title: "OTU ID" },
+            margin: { t: 30 },
+        };
+        Plotly.newPlot("bubble", data, layout);
+
+        let yTicks = otu_id.slice(0, 10).map(otuid => `OTU ${otuid}`).reverse();
 
         let data1 = [{
             y: yTicks,
-            x: sample_values.slice(0,10).reverse(),
-            text: otu_labels.slice(0,10).reverse(),
-            type : "bar",
+            x: sample_values.slice(0, 10).reverse(),
+            text: otu_labels.slice(0, 10).reverse(),
+            type: "bar",
             orientation: "h"
 
         }];
 
         let layout1 = {
             title: "Top 10 Bacteria Cultures Found",
-            margin: {t:30,l:150}
+            margin: { t: 30, l: 150 }
         };
 
-        Plotly.newPlot("bar",data1,layout1);
+        Plotly.newPlot("bar", data1, layout1);
 
-    //     var data = [
-    //         {
-    //             domain: { x: [0, 1], y: [0, 1] },
-    //             value: 270,
-    //             title: { text: "Speed" },
-    //             type: "indicator",
-    //             mode: "gauge+number"
-    //         }
-    //     ];
-
-    //     let freq = 
-        
-    //     var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
-    //     Plotly.newPlot('myDiv', data, layout);
-
-      });
-
-
-    // Pay attention to what data is required for each chart
-    // w3 schools
-
-    // Create bar chart in correct location
-
-    // Create bubble chart in correct location
-
-
+    });
 
 }
+
+
+
+
+
+
+// Pay attention to what data is required for each chart
+// w3 schools
+
+// Create bar chart in correct location
+
+// Create bubble chart in correct location
+
 
 
 function optionChanged(sample) {
