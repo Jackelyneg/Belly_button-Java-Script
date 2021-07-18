@@ -47,25 +47,25 @@ function buildMetadata(sample) {
         Object.entries(result).forEach(([key, value]) => {
             panel.append("h6").text(`${key}:${value}`)
         });
+        let Values = metaData.map(value => value.wfreq);
+        let freq = Values[0];
+        console.log(Values);
+          
 
-        let freqArr = metaData.filter(sampleObj => sampleObj.id.wfreq == sample);
-        console.log(freqArr);
-        // let washFreq = freqArr[0];
+        let data3 = [
+            {
+                domain: { x: [0, 1], y: [0, 1] },
+                value: freq,
+                title: { text: "Speed" },
+                type: "indicator",
+                mode: "gauge+number",
+                // delta: { reference: Values },
+                // gauge: { axis: { range: [null, Values] } }
+            }
+        ];
+        let layout3 = { width: 600, height: 500, margin: { t: 0, b: 0 } }
 
-        // let data3 = [
-        //     {
-        //         domain: { x: [0, 1], y: [0, 1] },
-        //         value: freqArr,
-        //         title: { text: "Speed" },
-        //         type: "indicator",
-        //         mode: "gauge+number",
-        //         delta: { reference: washFreq },
-        //         gauge: { axis: { range: [null, washFreq] } }
-        //     }
-        // ];
-        // let layout3 = { width: 600, height: 500, margin: { t: 0, b: 0 } }
-
-        // Plotly.newPlot("gauge", data3, layout3);
+        Plotly.newPlot("gauge", data3, layout3);
 
 
 
