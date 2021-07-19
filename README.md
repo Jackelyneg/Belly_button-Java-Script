@@ -38,6 +38,9 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 
 4. Display sample metadata, i.e., an individual's demographic information.
 
+
+![metaData Image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/Capture.PNG)
+
 	
 
 5. Update all of the plots any time that a new sample is selected.
