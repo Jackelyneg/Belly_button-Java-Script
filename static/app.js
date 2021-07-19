@@ -47,16 +47,18 @@ function buildMetadata(sample) {
         Object.entries(result).forEach(([key, value]) => {
             panel.append("h6").text(`${key}:${value}`)
         });
-        let Values = metaData.map(value => value.wfreq);
-        let freq = Values[0];
-        console.log(Values);
+        // let Values = metaData.map(freq => freq.wfreq);
+
+        // console.log(Values);
+
+     
           
 
         let data3 = [
             {
                 domain: { x: [0, 1], y: [0, 1] },
-                value: freq,
-                title: { text: "Speed" },
+                value: "",
+                title: { text: "" },
                 type: "indicator",
                 mode: "gauge+number",
                 // delta: { reference: Values },
