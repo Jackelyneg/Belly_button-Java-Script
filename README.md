@@ -1,6 +1,5 @@
 # Plot.ly - Belly Button Biodiversity
 
-![Bacteria by filterforge.com](Images/bacteria.jpg)
 
 In this assignment, you will Building an interactive dashboard to explore the Belly Button Biodiversity dataset
 
@@ -8,6 +7,9 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 ## Step 1: Plotly
 
 1. Populate a dropdown menu with all of the Sample ID's. When an option is selected, this will update all of the charts.
+
+
+![bactera chart image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/bacteria%20chart.PNG)
 
 
 
