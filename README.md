@@ -9,9 +9,6 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 1. Populate a dropdown menu with all of the Sample ID's. When an option is selected, this will update all of the charts.
 
 
-![bactera chart image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/bacteria%20chart.PNG)
-
-
 
 2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 
@@ -22,6 +19,9 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 
 	
 	* Use `otu_labels` as the hovertext for the chart.
+
+
+![bactera chart image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/bacteria%20chart.PNG)
 
   
 
