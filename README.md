@@ -4,6 +4,16 @@
 In this assignment, you will Building an interactive dashboard to explore the Belly Button Biodiversity dataset
 
 
+
+
+![full page image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/page.PNG)
+
+
+
+
+
+
+
 ## Step 1: Plotly
 
 1. Populate a dropdown menu with all of the Sample ID's. When an option is selected, this will update all of the charts.
@@ -49,6 +59,21 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 	
 
 5. Update all of the plots any time that a new sample is selected.
+
+
+
+
+
+- Work done by: [Jacky Gutierrez](https://github.com/Jackelyneg)
+
+
+
+
+
+
+
+#### Disclaimer : Gauge section is incomplete...
+- To do: finish gauge section
 
 
 
