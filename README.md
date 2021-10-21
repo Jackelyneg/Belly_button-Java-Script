@@ -1,7 +1,7 @@
 # Plot.ly - Belly Button Biodiversity
 
 
-In this assignment, you will Building an interactive dashboard to explore the Belly Button Biodiversity dataset
+In this assignment, I will Building an interactive dashboard to explore the Belly Button Biodiversity dataset
 
 
 
@@ -22,13 +22,6 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 
 2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
 
-	* Use `sample_values` as the values for the bar chart.
-
-	
-	* Use `otu_ids` as the labels for the bar chart.
-
-	
-	* Use `otu_labels` as the hovertext for the chart.
 
 
 ![bactera chart image](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/bacteria%20chart.PNG)
@@ -37,15 +30,15 @@ In this assignment, you will Building an interactive dashboard to explore the Be
 
 3. Create a bubble chart that displays each sample.
 
-* Use `otu_ids` for the x values.
+* Using `otu_ids` for the x values.
 
-* Use `sample_values` for the y values.
+* Using `sample_values` for the y values.
 
-* Use `sample_values` for the marker size.
+* Using `sample_values` for the marker size.
 
-* Use `otu_ids` for the marker colors.
+* Using `otu_ids` for the marker colors.
 
-* Use `otu_labels` for the text values.
+* Using `otu_labels` for the text values.
 
 
 ![bubble chart](https://github.com/Jackelyneg/Plot.ly-/blob/main/Image/bubble%20graph.PNG)
